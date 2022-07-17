@@ -1,0 +1,245 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to a_assignment3 documentation! &#8212; a_assignment3  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-assignment3-s-documentation">
+<h1>Welcome to a_assignment3 documentation!<a class="headerlink" href="#welcome-to-a_assignment3-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+<div class="section" id="module-scripts.choice_one">
+<span id="choice-one-module"></span><h1>choice_one Module<a class="headerlink" href="#module-scripts.choice_one" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-choice_one"></span><dl class="docutils">
+<dt>Service:</dt>
+<dd>/robot_coordinates</dd>
+<dt>Actions:</dt>
+<dd>/move_base</dd>
+</dl>
+<p>This node is used for the user choice number one which is resposible for  auronomous robot drive.</p>
+<dl class="function">
+<dt id="scripts.choice_one.handler">
+<code class="descclassname">scripts.choice_one.</code><code class="descname">handler</code><span class="sig-paren">(</span><em>req</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/choice_one.html#handler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#scripts.choice_one.handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used for handeling the services as it waits for the user enter the x and y coordinates
+The user message is passed to the service
+<code class="docutils literal notranslate"><span class="pre">robot_coordinates</span></code>,
+advertised by <a class="reference internal" href="#module-user_control" title="user_control: Python code for choosing given choices for drive the robot (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">user_control</span></code></a>.
+and then using actions to insure if the robot reached the right goal or not.</p>
+<dl class="docutils">
+<dt>arg:</dt>
+<dd>req(int):the services element for recieving x and y coordinates</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-scripts.keyboard_interface">
+<span id="keyboard-interface-module"></span><h1>keyboard_interface Module<a class="headerlink" href="#module-scripts.keyboard_interface" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-keyboard_interface"></span><dl class="docutils">
+<dt>Service:</dt>
+<dd>/keyboard_interface to start the robot motion autonumously</dd>
+</dl>
+<p>This node is used for managing the robot with the choice 2 which is making the user
+control the robot manually with assistance or without.</p>
+<dl class="function">
+<dt id="scripts.keyboard_interface.handler">
+<code class="descclassname">scripts.keyboard_interface.</code><code class="descname">handler</code><span class="sig-paren">(</span><em>req</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/keyboard_interface.html#handler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#scripts.keyboard_interface.handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>this function is used for choose between the two modes for manual control for the robot
+by getting the choice from services from user_control_node</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-scripts.user_control">
+<span id="user-control-module"></span><h1>user_control Module<a class="headerlink" href="#module-scripts.user_control" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-user_control"></span><dl class="docutils">
+<dt>Service:</dt>
+<dd>/robot_coordinates to start the robot motion autonumously</dd>
+</dl>
+<p>This node is used for managing the robot with the choice which is givien by user then send it to the specific node.</p>
+<dl class="function">
+<dt id="scripts.user_control.choice_one">
+<code class="descclassname">scripts.user_control.</code><code class="descname">choice_one</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/user_control.html#choice_one"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#scripts.user_control.choice_one" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used when the user enter the choice 1 or number 1 for sending the coordinates chosen by
+user to (choic_one choice)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scripts.user_control.choice_three">
+<code class="descclassname">scripts.user_control.</code><code class="descname">choice_three</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/user_control.html#choice_three"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#scripts.user_control.choice_three" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used when the user enter the choice 3 or number 3 then run the node for keyboard control but
+when the robot reach minimum limit between it and the obsticale it stops.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="scripts.user_control.choice_two">
+<code class="descclassname">scripts.user_control.</code><code class="descname">choice_two</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/user_control.html#choice_two"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#scripts.user_control.choice_two" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used when the user enter the choice 2 or number 2 then run the node for keyboard control</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-scripts.choice_three">
+<span id="choice-three-module"></span><h1>choice_three Module<a class="headerlink" href="#module-scripts.choice_three" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-choice_three"></span><dl class="docutils">
+<dt>Service:</dt>
+<dd>/robot_coordinates</dd>
+<dt>Subscribes to :</dt>
+<dd>/map_update_cmd_vel
+/scan</dd>
+<dt>publish to :</dt>
+<dd>/cmd_vel</dd>
+</dl>
+<p>This node is used for the user choice number three which is resposible for robot drive maually
+but if its about to crash the wall the robot stops.</p>
+<dl class="function">
+<dt id="scripts.choice_three.callback_map_update">
+<code class="descclassname">scripts.choice_three.</code><code class="descname">callback_map_update</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/choice_three.html#callback_map_update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#scripts.choice_three.callback_map_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used for updating the global variable with new controller input</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>)  data which the robot gets from laser scanner</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="scripts.choice_three.callback_scan">
+<code class="descclassname">scripts.choice_three.</code><code class="descname">callback_scan</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/choice_three.html#callback_scan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#scripts.choice_three.callback_scan" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used for stop the robot when the robot face an obstical in any direction</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>)  data which the robot gets from laser scanner</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="scripts.choice_three.find_min_dist">
+<code class="descclassname">scripts.choice_three.</code><code class="descname">find_min_dist</code><span class="sig-paren">(</span><em>ranges</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/scripts/choice_three.html#find_min_dist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#scripts.choice_three.find_min_dist" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used for finding the minimum distance between the robot and the obstical</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ranges</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>)  ranges angels of the robot vision</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">the nearest obsticales in all directions</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dist_all_directions(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)">list</a>)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">assignment3</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Hussein Hassan.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/master.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+You have no unread notifications

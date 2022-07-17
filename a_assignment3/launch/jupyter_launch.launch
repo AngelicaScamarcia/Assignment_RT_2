@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch>
+   
+   <param name="collision_avoidance" value="false" />
+   
+   <node name="keyboard_controller" pkg="a_assignment3" type="case_2.py"  />
+
+   <node name="kb_map_node" pkg="a_assignment3" type="case_3.py"  />
+
+</launch>
