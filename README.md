@@ -1,4 +1,4 @@
-# Assignemnt_RT_2
+# Assignment_RT_2
 
 This assignment of the Research Track 2 course aims to control an autonomous robot that wanders into an unknown map, equipped with a laser scanner and knowing its odometry, and it is divided into three parts:
 1. In the first part, it is necessary to document the code of the third       assignment of Research Track 1 course, using essentially Doxygen or Sphinx.   
